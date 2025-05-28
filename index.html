@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trade carbon credits to support sustainable projects worldwide.">
+    <meta name="keywords" content="carbon credits, sustainability, marketplace, eco-friendly">
+    <meta name="author" content="Carbon Credits Marketplace">
+    <title>Carbon Credits Marketplace - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1527482797697-8795b05a5276?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=16&h=16" sizes="16x16">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm fixed-top" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Carbon Credits</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buy.html">Buy Credits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sell.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="slider">
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?crop=entropy&cs=tinysrgb&fit=crop&h=600&w=1200&auto=format&q=75" class="d-block w-100" alt="Forest preservation" loading="lazy">
+                    <div class="carousel-caption d-none d-md-flex">
+                        <h4 class="fw-bold">Preserve Forests</h4>
+                        <p>Support vital ecosystems.</p>
+                        <a href="buy.html" class="btn btn-sm btn-light text-primary" aria-label="Explore forest projects">Explore</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1503437313881-1d53f4b5c6cd?crop=entropy&cs=tinysrgb&fit=crop&h=600&w=1200&auto=format&q=75" class="d-block w-100" alt="Solar energy" loading="lazy">
+                    <div class="carousel-caption d-none d-md-flex">
+                        <h4 class="fw-bold">Power Renewables</h4>
+                        <p>Invest in clean energy.</p>
+                        <a href="buy.html" class="btn btn-sm btn-light text-primary" aria-label="Explore solar credits">Buy</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?crop=entropy&cs=tinysrgb&fit=crop&h=600&w=1200&auto=format&q=75" class="d-block w-100" alt="Wind energy" loading="lazy">
+                    <div class="carousel-caption d-none d-md-flex">
+                        <h4 class="fw-bold">Harness the Wind</h4>
+                        <p>Support wind projects.</p>
+                        <a href="buy.html" class="btn btn-sm btn-light text-primary" aria-label="Explore wind credits">Learn</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=crop&h=600&w=1200&auto=format&q=75" class="d-block w-100" alt="Reforestation" loading="lazy">
+                    <div class="carousel-caption d-none d-md-flex">
+                        <h4 class="fw-bold">Grow the Future</h4>
+                        <p>Plant trees for a greener planet.</p>
+                        <a href="buy.html" class="btn btn-sm btn-light text-primary" aria-label="Explore reforestation credits">Start</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev" aria-label="Previous slide">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next" aria-label="Next slide">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="container text-center">
+            <h2 class="mb-3 fw-bold animate__animated animate__fadeIn">Our Impact</h2>
+            <div class="row g-3">
+                <div class="col-md-4 animate__animated animate__fadeIn" data-delay="0.2s">
+                    <h3 class="fw-bold text-primary counter" data-target="50000">0</h3>
+                    <p>Tons CO2 Offset</p>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeIn" data-delay="0.4s">
+                    <h3 class="fw-bold text-primary counter" data-target="120">0</h3>
+                    <p>Projects Supported</p>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeIn" data-delay="0.6s">
+                    <h3 class="fw-bold text-primary counter" data-target="30">0</h3>
+                    <p>Countries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold animate__animated animate__fadeIn">Get Involved</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Save the Amazon Rainforest</h3>
+                    <div class="row align-items-center mb-3">
+                        <div class="col-4">
+                            <img src="https://images.unsplash.com/photo-1508599589920-14cfa1c1febb?crop=entropy&cs=tinysrgb&fit=crop&h=120&w=80&auto=format&q=75" class="img-fluid rounded project-img" alt="Amazon rainforest canopy" loading="lazy" data-bs-toggle="tooltip" title="Sequesters 5000 tons CO2/year!" data-bs-trigger="hover">
+                        </div>
+                        <div class="col-8">
+                            <p class="mb-2">Protect 1000 hectares of vital rainforest, sequester 5000 tons CO2 yearly, and support indigenous communities.</p>
+                        </div>
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-4">
+                            <img src="https://images.unsplash.com/photo-1508599589920-14cfa1c1febb?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=80&auto=format&q=75" class="img-fluid rounded" alt="Rainforest canopy" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img src="https://images.unsplash.com/photo-1610056494052-6a4f569a3477?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=80&auto=format&q=75" class="img-fluid rounded" alt="Jaguar in rainforest" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img src="https://images.unsplash.com/photo-1554731617-8eafa9975365?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=80&auto=format&q=75" class="img-fluid rounded" alt="Indigenous community" loading="lazy">
+                        </div>
+                    </div>
+                    <p>The Amazon Rainforest, Earth’s largest tropical forest, absorbs vast CO2, hosts 10% of global biodiversity, and sustains 400 indigenous communities. Our project preserves 1000 hectares in Brazil’s Amazonas state, preventing deforestation, promoting sustainable land use, and empowering local stewards.</p>
+                    <h6 class="fw-bold">Impact Stats</h6>
+                    <ul class="small mb-3">
+                        <li><strong>Area:</strong> 1000 hectares (2470 acres)</li>
+                        <li><strong>CO2 Sequestered:</strong> 5000 tons/year</li>
+                        <li><strong>Biodiversity:</strong> 300+ species protected (e.g., jaguars, macaws)</li>
+                        <li><strong>Community:</strong> 200+ indigenous families supported</li>
+                    </ul>
+                    <a href="buy.html" class="btn btn-sm btn-primary" aria-label="Support Amazon project">Support Now</a>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Calculate Your Offset</h3>
+                    <form id="calculatorForm">
+                        <div class="mb-2">
+                            <label for="shortFlights" class="form-label">Short-Haul Flights (<1500km)/Year</label>
+                            <input type="number" min="0" class="form-control form-control-sm" id="shortFlights" placeholder="e.g., 4" aria-describedby="shortFlightsHelp">
+                            <div id="shortFlightsHelp" class="form-text small">e.g., NY to Chicago</div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="longFlights" class="form-label">Long-Haul Flights (>1500km)/Year</label>
+                            <input type="number" min="0" class="form-control form-control-sm" id="longFlights" placeholder="e.g., 2" aria-describedby="longFlightsHelp">
+                            <div id="longFlightsHelp" class="form-text small">e.g., NY to London</div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="carMiles" class="form-label">Car Miles/Year</label>
+                            <div class="input-group input-group-sm">
+                                <input type="number" min="0" class="form-control" id="carMiles" placeholder="e.g., 10000" aria-describedby="carHelp">
+                                <select class="form-select" id="carType" aria-label="Car type">
+                                    <option value="gasoline" selected>Gasoline</option>
+                                    <option value="electric">Electric</option>
+                                </select>
+                            </div>
+                            <div id="carHelp" class="form-text small">Select vehicle type</div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="electricity" class="form-label">Electricity (kWh/Year)</label>
+                            <input type="number" min="0" class="form-control form-control-sm" id="electricity" placeholder="e.g., 10000" aria-describedby="electricityHelp">
+                            <div id="electricityHelp" class="form-text small">Avg. household: ~10,000 kWh</div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="diet" class="form-label">Diet Type</label>
+                            <select class="form-select form-select-sm" id="diet" aria-label="Diet type">
+                                <option value="meat" selected>Meat-Heavy</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-primary w-100" aria-label="Calculate footprint">Calculate</button>
+                        <div id="calculatorResult" class="mt-2 small text-center" role="alert"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold animate__animated animate__fadeIn">Our Projects</h2>
+            <div class="row g-3">
+                <div class="col-md-6 text-center">
+                    <h3 class="fw-bold mb-2">Explore Globally</h3>
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectMapModal" aria-label="View project map">View Map</button>
+                    <div class="modal fade" id="projectMapModal" tabindex="-1" aria-labelledby="projectMapModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="projectMapModalLabel">Projects Worldwide</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="map" style="height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-2">Latest Updates</h3>
+                    <div id="updatesFeed" class="list-group list-group-flush">
+                        <div class="list-group-item update-item small animate__animated animate__fadeIn">50 tons sold for Amazon! <small>2h ago</small></div>
+                        <div class="list-group-item update-item small animate__animated animate__fadeIn" style="display: none;">Solar project launched in India! <small>1d ago</small></div>
+                        <div class="list-group-item update-item small animate__animated animate__fadeIn" style="display: none;">Reforestation in Kenya hits 100 tons! <small>3d ago</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold animate__animated animate__fadeIn">Featured Credits</h2>
+            <div class="col-md-4 mx-auto mb-3">
+                <select class="form-select form-select-sm" id="creditFilter" aria-label="Filter credits">
+                    <option value="all" selected>All Credits</option>
+                    <option value="type-forestry">Forestry</option>
+                    <option value="type-solar">Solar</option>
+                    <option value="type-reforestation">Reforestation</option>
+                    <option value="location-Brazil">Brazil</option>
+                    <option value="location-India">India</option>
+                    <option value="location-Kenya">Kenya</option>
+                </select>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-3" id="creditsList">
+                <div class="col credit-card" data-type="forestry" data-location="Brazil">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1508599589920-14cfa1c1febb?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=120&auto=format&q=75" class="card-img-top" alt="Amazon rainforest" loading="lazy">
+                        <div class="card-body">
+                            <h4 class="card-title small">Forest Preservation</h4>
+                            <p class="card-text small"><strong>Amount:</strong> 100 tons</p>
+                            <p class="card-text small"><strong>Price:</strong> $15/ton</p>
+                            <p class="card-text small"><strong>Location:</strong> Brazil</p>
+                            <button class="btn btn-sm btn-primary w-100" aria-label="Buy forest credit">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col credit-card" data-type="solar" data-location="India">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1503437313881-1d53f4b5c6cd?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=120&auto=format&q=75" class="card-img-top" alt="Solar panels" loading="lazy">
+                        <div class="card-body">
+                            <h4 class="card-title small">Solar Energy</h4>
+                            <p class="card-text small"><strong>Amount:</strong> 50 tons</p>
+                            <p class="card-text small"><strong>Price:</strong> $20/ton</p>
+                            <p class="card-text small"><strong>Location:</strong> India</p>
+                            <button class="btn btn-sm btn-primary w-100" aria-label="Buy solar credit">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col credit-card" data-type="reforestation" data-location="Kenya">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=crop&h=80&w=120&auto=format&q=75" class="card-img-top" alt="Reforestation" loading="lazy">
+                        <div class="card-body">
+                            <h4 class="card-title small">Reforestation</h4>
+                            <p class="card-text small"><strong>Amount:</strong> 200 tons</p>
+                            <p class="card-text small"><strong>Price:</strong> $12/ton</p>
+                            <p class="card-text small"><strong>Location:</strong> Kenya</p>
+                            <button class="btn btn-sm btn-primary w-100" aria-label="Buy reforestation credit">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold animate__animated animate__fadeIn">Test Your Carbon Knowledge</h2>
+            <div class="col-md-6 mx-auto">
+                <form id="quizForm" class="card p-3 shadow-sm">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">1. What is a carbon credit?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1a" value="a" required aria-label="Carbon credit definition A">
+                            <label class="form-check-label small" for="q1a">A) A permit to emit CO2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1b" value="b" aria-label="Carbon credit definition B">
+                            <label class="form-check-label small" for="q1b">B) A certificate for emission reduction</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1c" value="c" aria-label="Carbon credit definition C">
+                            <label class="form-check-label small" for="q1c">C) A type of renewable energy</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1d" value="d" aria-label="Carbon credit definition D">
+                            <label class="form-check-label small" for="q1d">D) A recycling program</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">2. Which project offsets most CO2?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2a" value="a" required aria-label="Project type A">
+                            <label class="form-check-label small" for="q2a">A) Solar farms</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2b" value="b" aria-label="Project type B">
+                            <label class="form-check-label small" for="q2b">B) Reforestation</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2c" value="c" aria-label="Project type C">
+                            <label class="form-check-label small" for="q2c">C) Wind turbines</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2d" value="d" aria-label="Project type D">
+                            <label class="form-check-label small" for="q2d">D) Energy-efficient lighting</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">3. Avg. U.S. carbon footprint/year?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3a" value="a" required aria-label="Footprint size A">
+                            <label class="form-check-label small" for="q3a">A) 2 tons</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3b" value="b" aria-label="Footprint size B">
+                            <label class="form-check-label small" for="q3b">B) 16 tons</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3c" value="c" aria-label="Footprint size C">
+                            <label class="form-check-label small" for="q3c">C) 30 tons</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3d" value="d" aria-label="Footprint size D">
+                            <label class="form-check-label small" for="q3d">D) 50 tons</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary w-100" aria-label="Submit quiz">Submit Quiz</button>
+                </form>
+                <div class="modal fade" id="quizResultModal" tabindex="-1" aria-labelledby="quizResultLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="quizResultLabel">Quiz Results</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="quizResultContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light text-center">
+        <div class="container">
+            <h2 class="mb-4 fw-bold animate__animated animate__fadeIn">Stay Updated</h2>
+            <form id="newsletterForm" class="col-md-4 mx-auto">
+                <div class="input-group">
+                    <input type="email" class="form-control form-control-sm newsletter-input" id="email" placeholder="Email address" required aria-label="Email address" data-bs-toggle="tooltip" title="Enter valid email">
+                    <button class="btn btn-sm btn-primary" type="submit" aria-label="Subscribe">Subscribe</button>
+                </div>
+                <div id="newsletterSuccess" class="d-none mt-2">
+                    <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a7f59" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="cta-banner bg-primary text-white text-center py-2">
+        <div class="container">
+            <p class="small mb-0">Make an impact: <a href="buy.html" class="text-white fw-bold">Buy</a> or <a href="sell.html" class="text-white fw-bold">Projects</a></p>
+        </div>
+    </div>
+
+    <footer class="text-center bg-primary text-white py-2">
+        <div class="container">
+            <p class="small mb-1">© 2025 Carbon Credits Marketplace.</p>
+            <p class="small mb-0">
+                <a href="mailto:contact@carbonmarketplace.com" class="text-white">Contact</a> |
+                <a href="#" class="text-white">Privacy</a> |
+                <a href="#" class="text-white">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
