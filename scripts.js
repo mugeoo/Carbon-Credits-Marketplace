@@ -142,11 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const resultContent = `
                 <p class="fw-bold">Score: ${score}/3</p>
-                <p class="small">${score === 3 ? 'Perfect! You\'re a carbon expert!' : 'Great effort! Here’s what you learned:'}</p>
+                <p class="small">${score === 3 ? 'Perfect! You\'re a carbon expert!' : 'Great effort! Here\'s what you learned:'}</p>
                 <ul class="list-group list-group-flush small">
-                    <li class="list-group-item">1. ${explanations.q1} ${answers.q1] === correct.q1 ? '✓' : '✗'}</li>
-                    <li class="list-group-item">2. ${explanations.q2} ${answers.q2] === correct.q2 ? '✓' : '✗'}</li>
-                    <li class="list-group-item">3. ${explanations.q3} ${answers.q3] === correct.q3 ? '✓' : '✗'}</li>
+                    <li class="list-group-item">1. ${explanations.q1} ${answers.q1 === correct.q1 ? '✓' : '✗'}</li>
+                    <li class="list-group-item">2. ${explanations.q2} ${answers.q2 === correct.q2 ? '✓' : '✗'}</li>
+                    <li class="list-group-item">3. ${explanations.q3} ${answers.q3 === correct.q3 ? '✓' : '✗'}</li>
                 </ul>
             `;
             document.querySelector('#quizResultContent').innerHTML = resultContent;
@@ -161,18 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initMap = () => {
         try {
-            const map = L.map('map').setViewId([0, 0], 2);
+            const map = L.map('map').setView([0, 0], 2);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                maxZoom: 18,
-                width: 300px,
-                height: 300px;
+                maxZoom: 18
             }).addTo(map);
             const projects = [
                 { lat: -3.4653, lng: -62.2159, title: 'Amazon', desc: 'Forest preservation' },
                 { lat: 20.5937, lng: 78.9629, title: 'Solar', desc: 'Solar farms, India' },
-                { lat: -1.2864, lng: 36.8172, title: 'Reforestation', desc: 'Kenya tree planting' },
-                ];
+                { lat: -1.2864, lng: 36.8172, title: 'Reforestation', desc: 'Kenya tree planting' }
+            ];
             projects.forEach(project => {
                 L.marker([project.lat, project.lng]).addTo(map)
                     .bindPopup(`<b>${project.title}</b><br>${project.desc}`);
@@ -188,14 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const updates = document.querySelectorAll('.update-item');
             let index = 0;
             setInterval(() => {
-                updates.forEach(item => item.style.display = 'none';
+                updates.forEach(item => item.style.display = 'none');
                 updates[index].style.display = 'block';
                 index = (index + 1) % updates.length;
             }, 4000);
         } catch (error) {
             console.error('Updates error:', error);
         }
-    });
+    };
 
     const animateCounters = () => {
         try {
@@ -205,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let count = 0;
                 const increment = target / 100;
                 const updateCounter = () => {
-                    count += document.querySelector(increment);
+                    count += increment;
                     if (count < target) {
                         counter.textContent = Math.ceil(count);
                         requestAnimationFrame(updateCounter);
@@ -244,7 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.querySelectorAll('form:not(#newsletterForm):not(#contactForm):not(#calculatorForm):not(#quizForm)')).forEach(form => {
+    // Form event listeners
+    document.querySelectorAll('form:not(#newsletterForm):not(#contactForm):not(#calculatorForm):not(#quizForm)').forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             validateForm(form);
@@ -283,31 +282,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Button event listeners
     document.querySelectorAll('.btn-primary').forEach(button => {
         if (button.type !== 'submit') {
             button.addEventListener('click', () => handleBuyClick(button));
         }
     });
 
+    // Initialize tooltips
     try {
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
     } catch (error) {
         console.error('Tooltip error:', error);
     }
 
+    // Initialize map when modal is shown
     const mapModal = document.querySelector('#projectMapModal');
     if (mapModal) {
         mapModal.addEventListener('shown.bs.modal', initMap, { once: true });
     }
 
+    // Start cycling updates
     if (document.querySelector('#updatesFeed')) {
         cycleUpdates();
     }
 
+    // Start counter animations
     if (document.querySelector('.counter')) {
         animateCounters();
     }
 
+    // Filter functionality
     const filterSelect = document.querySelector('#creditFilter');
     if (filterSelect) {
         filterSelect.addEventListener('change', () => handleFilter(filterSelect));
